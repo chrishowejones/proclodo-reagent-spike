@@ -23,8 +23,6 @@
                  [cljs-ajax "0.5.1"]]
 
   :plugins [[lein-environ "1.0.0"]
-            [refactor-nrepl "1.1.0"]
-            [cider/cider-nrepl "0.9.1"]
             [lein-asset-minifier "0.2.2"]]
   :ring {:handler proclodo-reagent-spike.handler/app
          :uberwar-name "proclodo-reagent-spike.war"}
@@ -56,7 +54,6 @@
                    :dependencies [[ring/ring-mock "0.2.0"]
                                   [ring/ring-devel "1.4.0"]
                                   [lein-figwheel "0.3.7"]
-                                  [org.clojure/tools.nrepl "0.2.10"]
                                   [pjstadig/humane-test-output "0.7.0"]]
 
                    :source-paths ["env/dev/clj"]
