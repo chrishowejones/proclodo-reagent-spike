@@ -49,6 +49,7 @@
 (defonce save-event
   (go-loop []
     (let [event (<! event-channel)]
+      (swap! state assoc :event event)
       (post-event event)
       (recur))))
 
@@ -150,8 +151,6 @@
         [:button.btn.btn-success
          {:on-click
           (fn [_]
-            (swap! state assoc :event @event-state)
-            (swap! state assoc :saved? true)
             (go (>! event-channel @event-state)))}
          "Create"]]])))
 
